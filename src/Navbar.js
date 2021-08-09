@@ -4,6 +4,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <h1>Echipa Formular</h1>
+
       <div className="links">
         <Link to="/">Home</Link>
         <Link to="/view-all">View All</Link>

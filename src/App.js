@@ -1,5 +1,4 @@
 import Navbar from "./Navbar";
-import NavbarHome from "./NavbarHome";
 import ViewAll from "./ViewAll";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Create from "./Create";
