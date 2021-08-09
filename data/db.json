@@ -1,0 +1,42 @@
+{
+  "blogs": [
+    {
+      "title": "2132",
+      "body": "12313223",
+      "author": "mario",
+      "id": 3
+    },
+    {
+      "lastName": "Mada",
+      "body": "3",
+      "author": "mario",
+      "id": 5
+    },
+    {
+      "lastName": "1",
+      "firstName": "1",
+      "streetName": "",
+      "streetNo": "",
+      "city": "1",
+      "state": "1",
+      "phoneNo": "1",
+      "ssn": "1",
+      "question": "NO",
+      "licensePlate": "",
+      "id": 7
+    },
+    {
+      "id": 8,
+      "lastName": "1",
+      "firstName": "2",
+      "streetName": "3",
+      "streetNo": "4",
+      "city": "5",
+      "state": "6",
+      "phoneNo": "7",
+      "ssn": "8",
+      "question": "YES",
+      "licensePlate": "9"
+    }
+  ]
+}
