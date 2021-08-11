@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
+import useFetch from "./useFetch";
 
 const Home = () => {
+  const {
+    error,
+    isPending,
+    data: blogs,
+  } = useFetch("http://localhost:8000/blogs");
   return (
     <div>
       <Link to="/view-all">View All</Link>
@@ -15,6 +22,9 @@ const Home = () => {
         Add Client
       </Link>
       <Link to="/statistics">Statistics</Link>
+      <div>
+        <SearchBar placeholder="Search..." data={blogs} />
+      </div>
     </div>
   );
 };

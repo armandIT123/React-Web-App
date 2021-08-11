@@ -1,19 +1,8 @@
 {
   "blogs": [
     {
-      "title": "2132",
-      "body": "12313223",
-      "author": "mario",
-      "id": 3
-    },
-    {
-      "lastName": "Mada",
-      "body": "3",
-      "author": "mario",
-      "id": 5
-    },
-    {
-      "lastName": "1",
+      "id": 7,
+      "lastName": "Andrei",
       "firstName": "1",
       "streetName": "",
       "streetNo": "",
@@ -22,12 +11,11 @@
       "phoneNo": "1",
       "ssn": "1",
       "question": "NO",
-      "licensePlate": "",
-      "id": 7
+      "licensePlate": ""
     },
     {
       "id": 8,
-      "lastName": "1",
+      "lastName": "Armand",
       "firstName": "2",
       "streetName": "3",
       "streetNo": "4",
@@ -35,8 +23,34 @@
       "state": "6",
       "phoneNo": "7",
       "ssn": "8",
-      "question": "YES",
+      "question": "NO",
       "licensePlate": "9"
+    },
+    {
+      "id": 9,
+      "lastName": "ionel",
+      "firstName": "Popescu",
+      "streetName": "",
+      "streetNo": "",
+      "city": "Pitesti",
+      "state": "Romania",
+      "phoneNo": "07noi2",
+      "ssn": "50011",
+      "question": "NO",
+      "licensePlate": ""
+    },
+    {
+      "lastName": "Bianca",
+      "firstName": "Mihaela",
+      "streetName": "N. Balcescu",
+      "streetNo": "6",
+      "city": "Pitesti",
+      "state": "Romania",
+      "phoneNo": "07ceva",
+      "ssn": "60004",
+      "question": "NO",
+      "licensePlate": "",
+      "id": 10
     }
   ]
 }
