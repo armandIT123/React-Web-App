@@ -9,6 +9,11 @@ const BlogDetails = () => {
     error,
     isPending,
   } = useFetch("http://localhost:8000/blogs/" + id);
+  const { data: stats, isPending: statsPending } = useFetch(
+    "http://localhost:8000/stats/"
+  );
+  console.log(stats);
+
   const history = useHistory();
   const [lastName, setLastName] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -20,8 +25,10 @@ const BlogDetails = () => {
   const [ssn, setSSN] = useState("");
   const [question, setQuestion] = useState("NO");
   const [licensePlate, setLicensePlate] = useState("");
-  const [isShowing, setIsShowing] = useState(false);
   const [save, setSave] = useState(false);
+  const [deleted, setDeleted] = useState(0);
+  const [current, setCurrent] = useState(0);
+
   useEffect(() => {
     if (blog) {
       setLastName(blog.lastName);
@@ -35,6 +42,14 @@ const BlogDetails = () => {
       setLicensePlate(blog.licensePlate);
     }
   }, [blog]);
+
+  useEffect(() => {
+    if (stats) {
+      setDeleted(stats.deleted);
+      setCurrent(stats.current);
+    }
+  }, [stats]);
+
   const handleSave = (e) => {
     setSave(!save);
   };
@@ -70,6 +85,16 @@ const BlogDetails = () => {
     }).then(() => {
       history.push("/");
     });
+    const newDel = deleted + 1;
+    const newCurr = current - 1;
+    fetch("http://localhost:8000/stats/", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        deleted: newDel,
+        current: newCurr,
+      }),
+    });
   };
 
   const handleUpdate = () => {
@@ -90,6 +115,7 @@ const BlogDetails = () => {
         licensePlate,
       }),
     });
+
     setSave(false);
   };
 

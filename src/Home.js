@@ -22,7 +22,7 @@ const Home = () => {
         Add Client
       </Link>
       <Link to="/statistics">Statistics</Link>
-      <div>
+      <div className="search-input">
         <SearchBar placeholder="Search..." data={blogs} />
       </div>
     </div>

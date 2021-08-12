@@ -1,5 +1,5 @@
 const Statistics = () => {
-  return <h2>Statistics</h2>;
+  return <div>Statistics</div>;
 };
 
 export default Statistics;

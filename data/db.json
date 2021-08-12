@@ -1,45 +1,7 @@
 {
   "blogs": [
     {
-      "id": 7,
-      "lastName": "Andrei",
-      "firstName": "1",
-      "streetName": "",
-      "streetNo": "",
-      "city": "1",
-      "state": "1",
-      "phoneNo": "1",
-      "ssn": "1",
-      "question": "NO",
-      "licensePlate": ""
-    },
-    {
-      "id": 8,
-      "lastName": "Armand",
-      "firstName": "2",
-      "streetName": "3",
-      "streetNo": "4",
-      "city": "5",
-      "state": "6",
-      "phoneNo": "7",
-      "ssn": "8",
-      "question": "NO",
-      "licensePlate": "9"
-    },
-    {
-      "id": 9,
-      "lastName": "ionel",
-      "firstName": "Popescu",
-      "streetName": "",
-      "streetNo": "",
-      "city": "Pitesti",
-      "state": "Romania",
-      "phoneNo": "07noi2",
-      "ssn": "50011",
-      "question": "NO",
-      "licensePlate": ""
-    },
-    {
+      "id": 10,
       "lastName": "Bianca",
       "firstName": "Mihaela",
       "streetName": "N. Balcescu",
@@ -49,8 +11,117 @@
       "phoneNo": "07ceva",
       "ssn": "60004",
       "question": "NO",
+      "licensePlate": ""
+    },
+    {
+      "lastName": "armand",
+      "firstName": "dadsa",
+      "streetName": "",
+      "streetNo": "",
+      "city": "dsadsa",
+      "state": "romania",
+      "phoneNo": "armand",
+      "ssn": "dsadsa",
+      "question": "YES",
+      "licensePlate": "qweeqw",
+      "id": 15
+    },
+    {
+      "lastName": "123",
+      "firstName": "123",
+      "streetName": "",
+      "streetNo": "",
+      "city": "123",
+      "state": "123",
+      "phoneNo": "123",
+      "ssn": "123",
+      "question": "NO",
       "licensePlate": "",
-      "id": 10
+      "id": 16
+    },
+    {
+      "lastName": "",
+      "firstName": "",
+      "streetName": "",
+      "streetNo": "",
+      "city": "",
+      "state": "",
+      "phoneNo": "",
+      "ssn": "",
+      "question": "NO",
+      "licensePlate": "",
+      "id": 17
+    },
+    {
+      "lastName": "armand",
+      "firstName": "",
+      "streetName": "",
+      "streetNo": "",
+      "city": "",
+      "state": "",
+      "phoneNo": "",
+      "ssn": "",
+      "question": "NO",
+      "licensePlate": "",
+      "id": 18
+    },
+    {
+      "lastName": "",
+      "firstName": "",
+      "streetName": "",
+      "streetNo": "",
+      "city": "",
+      "state": "",
+      "phoneNo": "",
+      "ssn": "",
+      "question": "NO",
+      "licensePlate": "",
+      "id": 19
+    },
+    {
+      "lastName": "armand",
+      "firstName": "",
+      "streetName": "",
+      "streetNo": "",
+      "city": "",
+      "state": "romania",
+      "phoneNo": "",
+      "ssn": "",
+      "question": "NO",
+      "licensePlate": "",
+      "id": 20
+    },
+    {
+      "lastName": "armand",
+      "firstName": "dadsa",
+      "streetName": "",
+      "streetNo": "",
+      "city": "pitesti",
+      "state": "romania",
+      "phoneNo": "+08.67-76",
+      "ssn": "5001122033358",
+      "question": "NO",
+      "licensePlate": "",
+      "id": 21
+    },
+    {
+      "lastName": "",
+      "firstName": "",
+      "streetName": "",
+      "streetNo": "",
+      "city": "",
+      "state": "",
+      "phoneNo": "",
+      "ssn": "",
+      "question": "NO",
+      "licensePlate": "",
+      "id": 22
     }
-  ]
+  ],
+  "stats": {
+    "edited": 5,
+    "total": 20,
+    "current": 5,
+    "deleted": 17
+  }
 }
