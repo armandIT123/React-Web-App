@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import useFetch from "./useFetch";
+import "./index.css";
+import NavbarHome from "./NavbarHome";
 
 const Home = () => {
   const {
@@ -10,7 +12,13 @@ const Home = () => {
   } = useFetch("http://localhost:8000/blogs");
   return (
     <div>
-      <Link to="/view-all">View All</Link>
+      {/* <NavbarHome /> */}
+      <div className="search-input">
+        <SearchBar placeholder="Search..." data={blogs} />
+      </div>
+      <Link to="/view-all" className="home-view-all">
+        View All
+      </Link>
       <Link
         to="/create"
         style={{
@@ -18,13 +26,13 @@ const Home = () => {
           backgroundColor: "#f1356d",
           borderRadius: "8px",
         }}
+        className="home-add-client"
       >
         Add Client
       </Link>
-      <Link to="/statistics">Statistics</Link>
-      <div className="search-input">
-        <SearchBar placeholder="Search..." data={blogs} />
-      </div>
+      <Link to="/statistics" className="home-statistics">
+        Statistics
+      </Link>
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import BlogList from "./BlogList";
+import SearchIcon from "@material-ui/icons/Search";
+import CloseIcon from "@material-ui/icons/Close";
 
 function SearchBar({ placeholder, data }) {
   const [filteredData, setFilteredData] = useState([]);
@@ -29,14 +31,20 @@ function SearchBar({ placeholder, data }) {
     <div className="search">
       <div classname="searchInputs">
         <input type="text" placeholder={placeholder} onChange={handleFilter} />
-        <div className="searchIcon"></div>
+        <div className="searchIcon">
+          {filteredData.length === 0 ? (
+            <SearchIcon />
+          ) : (
+            <SearchIcon id="searchBtn" />
+          )}
+        </div>
       </div>
       {filteredData.length !== 0 && (
         <div className="dataResult">
           {filteredData &&
             filteredData.map((blog, key) => {
               return (
-                <div>
+                <div class>
                   <BlogList blogs={filteredData} />
                 </div>
               );
