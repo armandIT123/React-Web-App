@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import useFetch from "./useFetch";
+import { useHistory, useParams } from "react-router-dom";
 import React from "react";
 import {
   BarChart,
@@ -11,6 +14,10 @@ import {
 } from "recharts";
 
 const Chart = ({ stats }) => {
+  // const { data: stats, isPending: statsPending } = useFetch(
+  //   "http://localhost:8000/stats/"
+  // );
+
   const added = parseInt(stats.total);
   const current = parseInt(stats.current);
   const edited = parseInt(stats.edited);

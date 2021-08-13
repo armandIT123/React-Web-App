@@ -4,8 +4,22 @@ import { useHistory, useParams } from "react-router-dom";
 
 const GetStats = () => {
   const [stats, setStats] = useState([]);
+  const [deleted, setDeleted] = useState([]);
+  const [current, setCurrent] = useState([]);
+  const [total, setTotal] = useState([]);
+  const [edited, setEdited] = useState([]);
+
+  useEffect(() => {
+    if (stats) {
+      setEdited(stats.edited);
+      setTotal(stats.total);
+      setCurrent(stats.current);
+      setDeleted(stats.deleted);
+    }
+  }, [stats]);
+
   fetch("http://localhost:8000/stats/", {
-    method: "POST",
+    method: "COPY",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(stats),
   }).then(() => {

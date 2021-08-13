@@ -274,5 +274,12 @@
       "id": 38
     }
   ],
-  "stats": []
+  "stats": [
+    {
+      "total": 20,
+      "current": 10,
+      "edited": 5,
+      "deleted": 10
+    }
+  ]
 }
