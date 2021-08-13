@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
+import useFetch from "./useFetch";
 import "./index.css";
 
 const Create = () => {
@@ -25,6 +26,19 @@ const Create = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
+
+  const { data: stats, isPending: statsPending } = useFetch(
+    "http://localhost:8000/stats/"
+  );
+  const [total, setTotal] = useState(0);
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (stats) {
+      setTotal(stats.total);
+      setCurrent(stats.current);
+    }
+  }, [stats]);
 
   const handleSubmit1 = (e) => {
     e.preventDefault();
@@ -53,25 +67,29 @@ const Create = () => {
       history.push("/");
       setIsPending(false);
     });
-  };
 
-  if (!handleSubmit(onSubmit)) {
-    handleSubmit1();
-  } else {
-    handleSubmit(onSubmit);
-  }
+    const newTot = total + 1;
+    const newCurr = current + 1;
+    fetch("http://localhost:8000/stats/", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        total: newTot,
+        current: newCurr,
+      }),
+    });
+  };
 
   return (
     <div className="create">
       <h1>New Client</h1>
-      <form onSubmit={(handleSubmit1, handleSubmit(onSubmit))}>
+      <form onSubmit={handleSubmit1 /*handleSubmit(onSubmit)*/}>
         <fieldset>
           <label>Last Name</label>
           <input
             id="lastName"
             type="text"
             value={lastName}
-            onBlur=
             placeholder="Enter your last name..."
             {...register("lastName", {
               required: "This is required",

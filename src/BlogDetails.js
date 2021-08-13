@@ -28,6 +28,7 @@ const BlogDetails = () => {
   const [save, setSave] = useState(false);
   const [deleted, setDeleted] = useState(0);
   const [current, setCurrent] = useState(0);
+  const [edited, setEdited] = useState(0);
 
   useEffect(() => {
     if (blog) {
@@ -47,6 +48,12 @@ const BlogDetails = () => {
     if (stats) {
       setDeleted(stats.deleted);
       setCurrent(stats.current);
+    }
+  }, [stats]);
+
+  useEffect(() => {
+    if (stats) {
+      setEdited(stats.edited);
     }
   }, [stats]);
 
@@ -115,8 +122,15 @@ const BlogDetails = () => {
         licensePlate,
       }),
     });
-
     setSave(false);
+    const newEd = edited + 1;
+    fetch("http://localhost:8000/stats/", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        edited: newEd,
+      }),
+    });
   };
 
   return (
@@ -222,7 +236,7 @@ const BlogDetails = () => {
               </div>
             )}
             <button onClick={handleClick}>Delete</button>
-            <button onClick={handleSave}>Edit</button>
+            {!save && <button onClick={handleSave}>Edit</button>}
             {save && <button onClick={handleUpdate}>Save</button>}
           </article>
         )}
