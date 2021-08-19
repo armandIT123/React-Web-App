@@ -1,162 +1,6 @@
 {
   "blogs": [
     {
-      "id": 10,
-      "lastName": "Bianca",
-      "firstName": "Mihaela",
-      "streetName": "N. Balcescu",
-      "streetNo": "6",
-      "city": "Pitesti",
-      "state": "Romania",
-      "phoneNo": "07ceva",
-      "ssn": "60004",
-      "question": "NO",
-      "licensePlate": ""
-    },
-    {
-      "lastName": "armand",
-      "firstName": "dadsa",
-      "streetName": "",
-      "streetNo": "",
-      "city": "dsadsa",
-      "state": "romania",
-      "phoneNo": "armand",
-      "ssn": "dsadsa",
-      "question": "YES",
-      "licensePlate": "qweeqw",
-      "id": 15
-    },
-    {
-      "id": 16,
-      "lastName": "123",
-      "firstName": "123",
-      "streetName": "",
-      "streetNo": "",
-      "city": "123",
-      "state": "123",
-      "phoneNo": "123",
-      "ssn": "123",
-      "question": "NO",
-      "licensePlate": ""
-    },
-    {
-      "lastName": "",
-      "firstName": "",
-      "streetName": "",
-      "streetNo": "",
-      "city": "",
-      "state": "",
-      "phoneNo": "",
-      "ssn": "",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 17
-    },
-    {
-      "lastName": "armand",
-      "firstName": "",
-      "streetName": "",
-      "streetNo": "",
-      "city": "",
-      "state": "",
-      "phoneNo": "",
-      "ssn": "",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 18
-    },
-    {
-      "lastName": "armand",
-      "firstName": "",
-      "streetName": "",
-      "streetNo": "",
-      "city": "",
-      "state": "romania",
-      "phoneNo": "",
-      "ssn": "",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 20
-    },
-    {
-      "lastName": "armand",
-      "firstName": "dadsa",
-      "streetName": "",
-      "streetNo": "",
-      "city": "pitesti",
-      "state": "romania",
-      "phoneNo": "+08.67-76",
-      "ssn": "5001122033358",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 21
-    },
-    {
-      "lastName": "",
-      "firstName": "",
-      "streetName": "",
-      "streetNo": "",
-      "city": "",
-      "state": "",
-      "phoneNo": "",
-      "ssn": "",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 23
-    },
-    {
-      "lastName": "armand",
-      "firstName": "dadsa",
-      "streetName": "",
-      "streetNo": "",
-      "city": "pitesti",
-      "state": "romania",
-      "phoneNo": "+08.67-76",
-      "ssn": "5001122033358",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 24
-    },
-    {
-      "lastName": "armand",
-      "firstName": "dadsa",
-      "streetName": "",
-      "streetNo": "",
-      "city": "pitesti",
-      "state": "romania",
-      "phoneNo": "+08.67-76",
-      "ssn": "5001122033358",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 25
-    },
-    {
-      "lastName": "",
-      "firstName": "",
-      "streetName": "",
-      "streetNo": "",
-      "city": "",
-      "state": "",
-      "phoneNo": "",
-      "ssn": "",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 26
-    },
-    {
-      "lastName": "",
-      "firstName": "",
-      "streetName": "",
-      "streetNo": "",
-      "city": "",
-      "state": "",
-      "phoneNo": "",
-      "ssn": "",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 27
-    },
-    {
       "lastName": "",
       "firstName": "",
       "streetName": "",
@@ -168,19 +12,6 @@
       "question": "NO",
       "licensePlate": "",
       "id": 28
-    },
-    {
-      "lastName": "armand",
-      "firstName": "dadsa",
-      "streetName": "",
-      "streetNo": "",
-      "city": "pitesti",
-      "state": "romania",
-      "phoneNo": "+08.67-76",
-      "ssn": "5001122033358",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 29
     },
     {
       "lastName": "",
@@ -196,6 +27,7 @@
       "id": 32
     },
     {
+      "id": 35,
       "lastName": "armand",
       "firstName": "dadsa",
       "streetName": "",
@@ -205,81 +37,13 @@
       "phoneNo": "+08.67-76",
       "ssn": "5001122033358",
       "question": "NO",
-      "licensePlate": "",
-      "id": 33
-    },
-    {
-      "lastName": "armand",
-      "firstName": "dadsa",
-      "streetName": "",
-      "streetNo": "",
-      "city": "pitesti",
-      "state": "romania",
-      "phoneNo": "+08.67-76",
-      "ssn": "5001122033358",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 34
-    },
-    {
-      "lastName": "armand",
-      "firstName": "dadsa",
-      "streetName": "",
-      "streetNo": "",
-      "city": "pitesti",
-      "state": "romania",
-      "phoneNo": "+08.67-76",
-      "ssn": "5001122033358",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 35
-    },
-    {
-      "lastName": "armand",
-      "firstName": "dadsa",
-      "streetName": "",
-      "streetNo": "",
-      "city": "pitesti",
-      "state": "romania",
-      "phoneNo": "+08.67-76",
-      "ssn": "5001122033358",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 36
-    },
-    {
-      "lastName": "Claudia",
-      "firstName": "Balan",
-      "streetName": "",
-      "streetNo": "",
-      "city": "Pitesti",
-      "state": "Romania",
-      "phoneNo": "0723667162",
-      "ssn": "277",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 37
-    },
-    {
-      "lastName": "Mitu",
-      "firstName": "Alex",
-      "streetName": "",
-      "streetNo": "",
-      "city": "Bucuresti",
-      "state": "Romania",
-      "phoneNo": "07nustiu",
-      "ssn": "500nustiu",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 38
+      "licensePlate": ""
     }
   ],
-  "stats": [
-    {
-      "total": 20,
-      "current": 10,
-      "edited": 5,
-      "deleted": 10
-    }
-  ]
+  "stats": {
+    "total": 20,
+    "current": 8,
+    "edited": 6,
+    "deleted": 12
+  }
 }

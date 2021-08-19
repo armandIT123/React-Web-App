@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import useFetch from "./useFetch";
 import "./index.css";
+import { Progress } from "antd";
 
 const Create = () => {
   const [lastName, setLastName] = useState("");
@@ -78,12 +79,14 @@ const Create = () => {
         current: newCurr,
       }),
     });
+    console.log(newTot);
   };
 
   return (
     <div className="create">
       <h1>New Client</h1>
-      <form onSubmit={handleSubmit1 /*handleSubmit(onSubmit)*/}>
+      <Progress percent={30} />
+      <form onSubmit={(handleSubmit1, handleSubmit(onSubmit))}>
         <fieldset>
           <label>Last Name</label>
           <input
@@ -200,7 +203,7 @@ const Create = () => {
               required: "This is required",
               pattern: {
                 value: /^[0-9+-.]+$/i,
-                message: "This is not a state name",
+                message: "This is not a valid phone number!",
               },
               minLength: { value: 8, message: "Too short" },
               maxLength: { value: 15, message: "Max length exceeded" },

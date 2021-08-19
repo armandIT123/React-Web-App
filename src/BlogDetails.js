@@ -132,7 +132,6 @@ const BlogDetails = () => {
       }),
     });
   };
-
   return (
     <div className="blog-details">
       <fieldset>
