@@ -13,15 +13,33 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const Chart = ({ stats }) => {
+const Chart = () => {
   // const { data: stats, isPending: statsPending } = useFetch(
   //   "http://localhost:8000/stats/"
   // );
 
-  const added = parseInt(stats.total);
-  const current = parseInt(stats.current);
-  const edited = parseInt(stats.edited);
-  const deleted = parseInt(stats.deleted);
+  const { data: stats, isPending: statsPending } = useFetch(
+    "http://localhost:8000/stats/"
+  );
+
+  const [total, setTotal] = useState(0);
+  const [current, setCurrent] = useState(0);
+  const [edited, setEdited] = useState(0);
+  const [deleted, setDeleted] = useState(0);
+
+  useEffect(() => {
+    if (stats) {
+      setTotal(stats.total);
+      setCurrent(stats.current);
+      setEdited(stats.edited);
+      setDeleted(stats.deleted);
+    }
+  }, [stats]);
+
+  const added = parseInt(total);
+  const currentt = parseInt(current);
+  const editedd = parseInt(edited);
+  const deletedd = parseInt(deleted);
 
   const data = [
     {

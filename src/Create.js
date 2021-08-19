@@ -5,6 +5,8 @@ import useFetch from "./useFetch";
 import "./index.css";
 import { Progress } from "antd";
 
+import { ProgressBar, Button } from "react-bootstrap";
+
 const Create = () => {
   const [lastName, setLastName] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -28,16 +30,19 @@ const Create = () => {
   } = useForm();
   const onSubmit = (data) => console.log(data);
 
+  const { data: blog } = useFetch("http://localhost:8000/blogs/");
   const { data: stats, isPending: statsPending } = useFetch(
     "http://localhost:8000/stats/"
   );
   const [total, setTotal] = useState(0);
   const [current, setCurrent] = useState(0);
+  const [deleted, setDeleted] = useState(0);
 
   useEffect(() => {
     if (stats) {
       setTotal(stats.total);
       setCurrent(stats.current);
+      setDeleted(stats.deleted);
     }
   }, [stats]);
 
@@ -82,11 +87,26 @@ const Create = () => {
     console.log(newTot);
   };
 
+  const handleAdd = () => {
+    if (current > 10) {
+      console.log("aproape am reusit");
+    }
+  };
+  const progress = 50;
   return (
     <div className="create">
       <h1>New Client</h1>
-      <Progress percent={30} />
-      <form onSubmit={(handleSubmit1, handleSubmit(onSubmit))}>
+      {
+        <Progress
+          percent={70}
+          strokeColor={{
+            "0%": "#108ee9",
+            "100%": "#87d068",
+          }}
+        />
+      }
+
+      <form onSubmit={handleSubmit1 /*, handleSubmit(onSubmit)*/}>
         <fieldset>
           <label>Last Name</label>
           <input
@@ -264,7 +284,11 @@ const Create = () => {
             </div>
           )}
 
-          {!isPending && <button className="add-btn">Add Client</button>}
+          {!isPending && (
+            <button className="add-btn" onClick={handleAdd}>
+              Add Client
+            </button>
+          )}
           {isPending && <button>Adding Client</button>}
         </fieldset>
       </form>

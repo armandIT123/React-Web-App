@@ -92,6 +92,7 @@ const BlogDetails = () => {
     }).then(() => {
       history.push("/");
     });
+    console.log(blog);
     const newDel = deleted + 1;
     const newCurr = current - 1;
     fetch("http://localhost:8000/stats/", {
@@ -103,7 +104,6 @@ const BlogDetails = () => {
       }),
     });
   };
-
   const handleUpdate = () => {
     fetch("http://localhost:8000/blogs/" + blog.id, {
       method: "PUT",
@@ -132,6 +132,10 @@ const BlogDetails = () => {
       }),
     });
   };
+  if (current > 5) {
+    console.log("merge");
+  }
+
   return (
     <div className="blog-details">
       <fieldset>
