@@ -1,8 +1,9 @@
 {
   "blogs": [
     {
-      "lastName": "Test",
-      "firstName": "9",
+      "id": 42,
+      "lastName": "12",
+      "firstName": "ceva s",
       "streetName": "",
       "streetNo": "",
       "city": "",
@@ -10,8 +11,7 @@
       "phoneNo": "",
       "ssn": "",
       "question": "NO",
-      "licensePlate": "",
-      "id": 42
+      "licensePlate": ""
     },
     {
       "lastName": "Test",
@@ -238,7 +238,7 @@
   "stats": {
     "total": 61,
     "current": 17,
-    "edited": 11,
+    "edited": 14,
     "deleted": 45
   }
 }

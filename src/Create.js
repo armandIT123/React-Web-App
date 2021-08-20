@@ -101,7 +101,7 @@ const Create = () => {
       <h1>New Client</h1>
       {
         <Progress
-          percent={70}
+          percent={100}
           strokeColor={{
             "0%": "#108ee9",
             "100%": "#87d068",
