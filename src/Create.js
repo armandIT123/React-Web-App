@@ -30,26 +30,8 @@ const Create = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-
-  const { data: blog } = useFetch("http://localhost:8000/blogs/");
-  const { data: stats, isPending: statsPending } = useFetch(
-    "http://localhost:8000/stats/"
-  );
-  const [total, setTotal] = useState(0);
-  const [current, setCurrent] = useState(0);
-  const [deleted, setDeleted] = useState(0);
-
-  useEffect(() => {
-    if (stats) {
-      setTotal(stats.total);
-      setCurrent(stats.current);
-      setDeleted(stats.deleted);
-    }
-  }, [stats]);
-
-  const handleSubmit1 = (e) => {
-    e.preventDefault();
+  const onSubmit = (data) => {
+    console.log(data);
 
     const blog = {
       lastName,
@@ -63,9 +45,7 @@ const Create = () => {
       question,
       licensePlate,
     };
-
     setIsPending(true);
-
     fetch("http://localhost:8000/blogs/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -89,9 +69,30 @@ const Create = () => {
     console.log(newTot);
   };
 
+  const { data: blog } = useFetch("http://localhost:8000/blogs/");
+  const { data: stats, isPending: statsPending } = useFetch(
+    "http://localhost:8000/stats/"
+  );
+  const [total, setTotal] = useState(0);
+  const [current, setCurrent] = useState(0);
+  const [deleted, setDeleted] = useState(0);
+
+  useEffect(() => {
+    if (stats) {
+      setTotal(stats.total);
+      setCurrent(stats.current);
+      setDeleted(stats.deleted);
+    }
+  }, [stats]);
+
   const handleAdd = () => {
     if (current > 10) {
-      console.log("aproape am reusit");
+      console.log("works");
+      // fetch("http://localhost:8000/blogs/" + 37, {
+      //   method: "DELETE",
+      // }).then(() => {
+      //   history.push("/");
+      // });
     }
   };
   const progress = 50;
@@ -108,7 +109,7 @@ const Create = () => {
         />
       }
 
-      <form onSubmit={handleSubmit1 /*, handleSubmit(onSubmit)*/}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
           <label>Last Name</label>
           <input

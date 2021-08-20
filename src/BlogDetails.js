@@ -48,11 +48,6 @@ const BlogDetails = () => {
     if (stats) {
       setDeleted(stats.deleted);
       setCurrent(stats.current);
-    }
-  }, [stats]);
-
-  useEffect(() => {
-    if (stats) {
       setEdited(stats.edited);
     }
   }, [stats]);
