@@ -59,6 +59,7 @@ const Edit = (props) => {
         <label>Last Name</label>
         <input
           type="text"
+          id="lastName"
           value={lastName}
           {...register("lastName", {
             required: "This is required",
@@ -73,6 +74,7 @@ const Edit = (props) => {
         {errors.lastName && <p>{errors.lastName.message}</p>}
         <label>First Name</label>
         <input
+          id="firstName"
           type="text"
           required
           value={firstName}
@@ -81,18 +83,21 @@ const Edit = (props) => {
         <label>Street Name</label>
         <input
           type="text"
+          id="streetName"
           value={streetName}
           onChange={(e) => setStreetName(e.target.value)}
         />
         <label>Street Number</label>
         <input
           type="text"
+          id="streetNo"
           value={streetNo}
           onChange={(e) => setStreetNo(e.target.value)}
         />
         <label>City</label>
         <input
           type="text"
+          id="city"
           required
           value={city}
           onChange={(e) => setCity(e.target.value)}
@@ -100,6 +105,7 @@ const Edit = (props) => {
         <label>State</label>
         <input
           type="text"
+          id="state"
           required
           value={state}
           onChange={(e) => setState(e.target.value)}
@@ -107,6 +113,7 @@ const Edit = (props) => {
         <label>Phone Number</label>
         <input
           type="text"
+          id="phoneNo"
           required
           value={phoneNo}
           onChange={(e) => setPhoneNo(e.target.value)}
@@ -114,6 +121,7 @@ const Edit = (props) => {
         <label>Social Security Number</label>
         <input
           type="text"
+          id="ssn"
           required
           value={ssn}
           onChange={(e) => setSSN(e.target.value)}
