@@ -7,6 +7,8 @@ import { Progress } from "antd";
 
 import { ProgressBar, Button } from "react-bootstrap";
 
+// npx json-server --watch data/db.json --port 8000
+
 const Create = () => {
   const [lastName, setLastName] = useState("");
   const [firstName, setFirstName] = useState("");
