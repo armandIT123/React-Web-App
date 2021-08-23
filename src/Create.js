@@ -55,18 +55,19 @@ const Create = () => {
       history.push("/");
       setIsPending(false);
     });
-
-    const newTot = total + 1;
-    const newCurr = current + 1;
-    fetch("http://localhost:8000/stats/", {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        total: newTot,
-        current: newCurr,
-      }),
-    });
-    console.log(newTot);
+    if (current < 9) {
+      const newTot = total + 1;
+      const newCurr = current + 1;
+      fetch("http://localhost:8000/stats/", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          total: newTot,
+          current: newCurr,
+        }),
+      });
+      console.log(newTot);
+    }
   };
 
   const { data: blog } = useFetch("http://localhost:8000/blogs/");
@@ -86,16 +87,30 @@ const Create = () => {
   }, [stats]);
 
   const handleAdd = () => {
-    if (current > 10) {
+    const first = blog[0];
+    if (current > 9) {
       console.log("works");
-      // fetch("http://localhost:8000/blogs/" + 37, {
-      //   method: "DELETE",
-      // }).then(() => {
-      //   history.push("/");
-      // });
+
+      fetch("http://localhost:8000/blogs/" + first.id, {
+        method: "DELETE",
+      }).then(() => {
+        history.push("/");
+      });
+      const Total = total + 1;
+      const newDel = deleted + 1;
+      fetch("http://localhost:8000/stats/", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          deleted: newDel,
+          total: Total,
+        }),
+      });
     }
+    console.log(first);
   };
   const progress = 50;
+
   return (
     <div className="create">
       <h1>New Client</h1>
