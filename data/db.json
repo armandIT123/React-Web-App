@@ -1,32 +1,6 @@
 {
   "blogs": [
     {
-      "lastName": "John",
-      "firstName": "Cena",
-      "streetName": "",
-      "streetNo": "",
-      "city": "Chicago",
-      "state": "America",
-      "phoneNo": "1945020490",
-      "ssn": "038592101847",
-      "question": "NO",
-      "licensePlate": "",
-      "id": 67
-    },
-    {
-      "lastName": "Fulgy",
-      "firstName": "de la Clejani",
-      "streetName": "",
-      "streetNo": "",
-      "city": "Clejani",
-      "state": "Romania",
-      "phoneNo": "0762788813",
-      "ssn": "58294859274",
-      "question": "YES",
-      "licensePlate": "B69FGY",
-      "id": 68
-    },
-    {
       "lastName": "Bianca",
       "firstName": "Miahela",
       "streetName": "",
@@ -103,12 +77,38 @@
       "question": "NO",
       "licensePlate": "",
       "id": 74
+    },
+    {
+      "lastName": "Lorem",
+      "firstName": "Ipsum",
+      "streetName": "N. Balcescu",
+      "streetNo": "3",
+      "city": "Pitesti",
+      "state": "Romania",
+      "phoneNo": "0747294728",
+      "ssn": "500274817482",
+      "question": "YES",
+      "licensePlate": "AG79ARA",
+      "id": 75
+    },
+    {
+      "lastName": "Armand",
+      "firstName": "Andrei",
+      "streetName": "Splaiul Independentei",
+      "streetNo": "280",
+      "city": "Bucuresti",
+      "state": "Romania",
+      "phoneNo": "074758372",
+      "ssn": "600837483957",
+      "question": "NO",
+      "licensePlate": "",
+      "id": 76
     }
   ],
   "stats": {
-    "total": 77,
+    "total": 80,
     "current": 9,
-    "edited": 14,
-    "deleted": 67
+    "edited": 15,
+    "deleted": 70
   }
 }
