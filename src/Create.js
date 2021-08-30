@@ -26,17 +26,6 @@ const Create = () => {
   const [current, setCurrent] = useState(0);
   const [deleted, setDeleted] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [visited, setVisited] = useState([
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
 
   const history = useHistory();
 
@@ -70,7 +59,7 @@ const Create = () => {
       history.push("/");
       setIsPending(false);
     });
-    if (current <= 9) {
+    if (current < 9) {
       const newTot = total + 1;
       const newCurr = current + 1;
       fetch("http://localhost:8000/stats/", {
@@ -81,7 +70,6 @@ const Create = () => {
           current: newCurr,
         }),
       });
-      console.log(newTot);
     }
   };
 
@@ -127,6 +115,7 @@ const Create = () => {
       <h1>New Client</h1>
       {
         <Progress
+          className="progress"
           percent={progress}
           strokeColor={{
             "0%": "#108ee9",
@@ -134,7 +123,6 @@ const Create = () => {
           }}
         />
       }
-
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
           <label>Last Name</label>
@@ -143,6 +131,7 @@ const Create = () => {
             type="text"
             value={lastName}
             placeholder="Enter your last name..."
+            // required
             {...register("lastName", {
               required: "This is required",
               pattern: {
@@ -151,17 +140,6 @@ const Create = () => {
               },
               maxLength: { value: 20, message: "This name is too long" },
             })}
-            onBlur={(e) => {
-              if (e.target.value && !visited[0]) {
-                setProgress(progress + 11.11);
-                visited[0] = true;
-                console.log("if");
-              } else if (visited[0] && e.target.value === "") {
-                setProgress(progress - 11.11);
-                visited[0] = false;
-                console.log("else if");
-              }
-            }}
             onChange={(e) => setLastName(e.target.value)}
           />
           {errors.lastName && <p>{errors.lastName.message}</p>}
@@ -172,6 +150,7 @@ const Create = () => {
             // required
             value={firstName}
             placeholder="Enter your first name..."
+            // required
             {...register("firstName", {
               required: "This is required",
               pattern: {
@@ -180,15 +159,6 @@ const Create = () => {
               },
               maxLength: { value: 25, message: "This name is too long" },
             })}
-            onBlur={(e) => {
-              if (e.target.value && !visited[1]) {
-                setProgress(progress + 11.11);
-                visited[1] = true;
-              } else if (visited[1] && e.target.value === "") {
-                setProgress(progress - 11.11);
-                visited[1] = false;
-              }
-            }}
             onChange={(e) => setFirstName(e.target.value)}
           />
           {errors.firstName && <p>{errors.firstName.message}</p>}
@@ -205,15 +175,6 @@ const Create = () => {
               },
               maxLength: { value: 40, message: "Max length exceeded" },
             })}
-            onBlur={(e) => {
-              if (e.target.value && !visited[2]) {
-                setProgress(progress + 11.11);
-                visited[2] = true;
-              } else if (visited[2] && e.target.value === "") {
-                setProgress(progress - 11.11);
-                visited[2] = false;
-              }
-            }}
             onChange={(e) => setStreetName(e.target.value)}
           />
           {errors.streetName && <p>{errors.streetName.message}</p>}
@@ -230,15 +191,6 @@ const Create = () => {
               },
               maxLength: { value: 20, message: "Max length exceeded" },
             })}
-            onBlur={(e) => {
-              if (e.target.value && !visited[3]) {
-                setProgress(progress + 11.11);
-                visited[3] = true;
-              } else if (visited[3] && e.target.value === "") {
-                setProgress(progress - 11.11);
-                visited[3] = false;
-              }
-            }}
             onChange={(e) => setStreetNo(e.target.value)}
           />
           {errors.streetNo && <p>{errors.streetNo.message}</p>}
@@ -249,23 +201,15 @@ const Create = () => {
             // required
             value={city}
             placeholder="Enter your city..."
+            // required
             {...register("city", {
               required: "This is required",
               pattern: {
-                value: /^[A-Za-z-']+$/i,
+                value: /^[A-Za-z- ']+$/i,
                 message: "This is not a city name",
               },
               maxLength: { value: 20, message: "Max length exceeded" },
             })}
-            onBlur={(e) => {
-              if (e.target.value && !visited[4]) {
-                setProgress(progress + 11.11);
-                visited[4] = true;
-              } else if (visited[4] && e.target.value === "") {
-                setProgress(progress - 11.11);
-                visited[4] = false;
-              }
-            }}
             onChange={(e) => setCity(e.target.value)}
           />
           {errors.city && <p>{errors.city.message}</p>}
@@ -276,6 +220,7 @@ const Create = () => {
             // required
             value={state}
             placeholder="Enter your  state..."
+            // required
             {...register("state", {
               required: "This is required",
               pattern: {
@@ -284,15 +229,6 @@ const Create = () => {
               },
               maxLength: { value: 20, message: "Max length exceeded" },
             })}
-            onBlur={(e) => {
-              if (e.target.value && !visited[5]) {
-                setProgress(progress + 11.11);
-                visited[5] = true;
-              } else if (visited[5] && e.target.value === "") {
-                setProgress(progress - 11.11);
-                visited[5] = false;
-              }
-            }}
             onChange={(e) => setState(e.target.value)}
           />
           {errors.state && <p>{errors.state.message}</p>}
@@ -300,7 +236,7 @@ const Create = () => {
           <input
             id="phone-no"
             type="text"
-            // required
+            required
             value={phoneNo}
             placeholder="Enter your phone number..."
             {...register("phoneNo", {
@@ -312,15 +248,6 @@ const Create = () => {
               minLength: { value: 8, message: "Too short" },
               maxLength: { value: 15, message: "Max length exceeded" },
             })}
-            onBlur={(e) => {
-              if (e.target.value && !visited[6]) {
-                setProgress(progress + 11.11);
-                visited[6] = true;
-              } else if (visited[6] && e.target.value === "") {
-                setProgress(progress - 11.11);
-                visited[6] = false;
-              }
-            }}
             onChange={(e) => setPhoneNo(e.target.value)}
           />
           {errors.phoneNo && <p>{errors.phoneNo.message}</p>}
@@ -328,7 +255,6 @@ const Create = () => {
           <input
             id="ssn"
             type="text"
-            // required
             value={ssn}
             placeholder="Enter your  ssn..."
             {...register("ssn", {
@@ -340,15 +266,6 @@ const Create = () => {
               minLength: { value: 11, message: "Too short" },
               maxLength: { value: 20, message: "Max length exceeded" },
             })}
-            onBlur={(e) => {
-              if (e.target.value && !visited[7]) {
-                setProgress(progress + 11.11);
-                visited[7] = true;
-              } else if (visited[7] && e.target.value === "") {
-                setProgress(progress - 11.11);
-                visited[7] = false;
-              }
-            }}
             onChange={(e) => setSSN(e.target.value)}
           />
           {errors.ssn && <p>{errors.ssn.message}</p>}
@@ -380,15 +297,6 @@ const Create = () => {
                   minLength: { value: 5, message: "Too short" },
                   maxLength: { value: 10, message: "Max length exceeded" },
                 })}
-                onBlur={(e) => {
-                  if (e.target.value && !visited[8]) {
-                    setProgress(progress + 11.11);
-                    visited[8] = true;
-                  } else if (visited[8] && e.target.value === "") {
-                    setProgress(progress - 11.11);
-                    visited[8] = false;
-                  }
-                }}
                 onChange={(e) => setLicensePlate(e.target.value)}
               />
               {errors.licensePlate && <p>{errors.licensePlate.message}</p>}
