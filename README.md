@@ -4,5 +4,5 @@ information and save them, a search bar to search a client for every personal in
 you can see how many clients have been added/deleted/edited or the current number of clients
 
 # Technologies and software: 
-React.js, JavaScript, HTML, CSS, React-Hook-Forms, Bootstrap, Json, Visual Studio Code.
+React.js, JavaScript, HTML, CSS, React-Hook-Forms, Bootstrap, Recharts, Json, Visual Studio Code.
  
