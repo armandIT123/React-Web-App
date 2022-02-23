@@ -5,3 +5,4 @@ you can see how many clients have been added/deleted/edited or the current numbe
 
 # Technologies and software: 
 React.js, JavaScript, HTML, CSS, React-Hook-Forms, Bootstrap, Json, Visual Studio Code.
+ 
